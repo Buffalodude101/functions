@@ -7,4 +7,7 @@
 # output the anwer to the user
 
 user_len = float(input("Enter a length to convert "))
+user_unit = input("What unit is your length? ")
+
+print(user_unit)
 print(user_len)
