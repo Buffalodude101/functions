@@ -13,7 +13,13 @@ user_unit = input("What unit is your length? ")
 # to convert mm to inches --> mm / 25.4
 
 # user gives inches unit
-convert_num = user_len * 25.4
+if user_unit == 'in':
+    convert_num = user_len * 25.4
+    
+elif user_unit == 'mm':
+    convert_num = user_len / 25.4
+
+
 
 print(user_unit)
 print(convert_num)
