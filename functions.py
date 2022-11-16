@@ -9,5 +9,11 @@
 user_len = float(input("Enter a length to convert "))
 user_unit = input("What unit is your length? ")
 
+# to convert inches to mm --> in X 25.4
+# to convert mm to inches --> mm / 25.4
+
+# user gives inches unit
+convert_num = user_len * 25.4
+
 print(user_unit)
-print(user_len)
+print(convert_num)
