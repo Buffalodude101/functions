@@ -6,37 +6,51 @@
 # convert the length to the correct unit
 # output the anwer to the user
 
+def user_parser(user_input):
+    values = user_input.rsplit(" ")
+    print(f"{values[0]}{values[1]}")
+
+
+
 while True:
-    while True:
-        user_len = (input("Enter a whole number to convert "))
-        if user_len.isdigit():
-            user_len = float(user_len)
-            break
-        else:
-            print("Please try agian")
+    user_len = input("number and unit to convert ")
+    user_parser(user_len)
+
+#     while ValueError:
+#         try:
+#              user_len = float(input("Enter a whole number to convert "))
+#              if user_len != ValueError:
+#                 break
+#         #if user_len.isdigit():
+#             #user_len = float(user_len)
+#             #break
+#         #else:
+#            # print("Please try agian")
+#         except ValueError as err:
+#             print(err)
         
         
        
 
 
 
-    user_unit = input("What unit is your length? ")
+#     user_unit = input("What unit is your length? ")
 
-    # to convert inches to mm --> in X 25.4
-    # to convert mm to inches --> mm / 25.4
+#     # to convert inches to mm --> in X 25.4
+#     # to convert mm to inches --> mm / 25.4
 
-    # user gives inches unit
+#     # user gives inches unit
 
-    if user_unit == 'in':
-        convert_num = user_len * 25.4
-        convert_unit = 'mm'
-        break
-    elif user_unit == 'mm':
-        convert_num = user_len / 25.4
-        convert_unit = 'in'
-        break
-    else:
-        print("Invalid unit")
+#     if user_unit == 'in':
+#         convert_num = user_len * 25.4
+#         convert_unit = 'mm'
+#         break
+#     elif user_unit == 'mm':
+#         convert_num = user_len / 25.4
+#         convert_unit = 'in'
+#         break
+#     else:
+#         print("Invalid unit")
 
 
 print(f"{convert_num:.2f}{convert_unit}")
