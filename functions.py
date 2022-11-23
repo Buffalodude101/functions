@@ -8,13 +8,27 @@
 
 def user_parser(user_input):
     values = user_input.rsplit(" ")
-    print(f"{values[0]}{values[1]}")
+    number = values[0]
+    if number.isdigit():
+        number = float(number)
+    else:
+        print("That is not a valid number ")
+    unit = values[1]
+    if unit != "IN":
+        print("That is not a valid unit")
+    return number, unit
+    
+
+    
+    #print(f"{values[0]} {values[1]}")
 
 
 
 while True:
-    user_len = input("number and unit to convert ")
-    user_parser(user_len)
+    user_len = input("number and unit to convert ").upper()
+    user_number, user_unit = user_parser(user_len)
+    print("User number", user_number)
+    print("User unit", user_unit)
 
 #     while ValueError:
 #         try:
