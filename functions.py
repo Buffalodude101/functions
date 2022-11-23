@@ -6,16 +6,22 @@
 # convert the length to the correct unit
 # output the anwer to the user
 
+valid_data = True
+
 def user_parser(user_input):
+    global valid_data
+    valid_data = True
     values = user_input.rsplit(" ")
     number = values[0]
     if number.isdigit():
         number = float(number)
     else:
         print("That is not a valid number ")
+        valid_data = False
     unit = values[1]
-    if unit != "IN":
+    if unit != "IN" and unit != "MM":
         print("That is not a valid unit")
+        valid_data = False
     return number, unit
     
 
@@ -25,11 +31,25 @@ def user_parser(user_input):
 
 
 while True:
-    user_len = input("number and unit to convert ").upper()
-    user_number, user_unit = user_parser(user_len)
-    print("User number", user_number)
-    print("User unit", user_unit)
+    while True:
+        user_len = input("number and unit to convert ").upper()
+        user_number, user_unit = user_parser(user_len)
+        if valid_data:
+            print("User number", user_number)
+            print("User unit", user_unit)
+            break
 
+    if user_unit == 'IN':
+        convert_num = user_number * 25.4
+        convert_unit = 'MM'
+        break
+    elif user_unit == 'MM':
+        convert_num = user_number / 25.4
+        convert_unit = 'IN'
+        break
+    else:
+        print("Invalid unit")
+print(convert_num, convert_unit)
 #     while ValueError:
 #         try:
 #              user_len = float(input("Enter a whole number to convert "))
@@ -66,5 +86,3 @@ while True:
 #     else:
 #         print("Invalid unit")
 
-
-print(f"{convert_num:.2f}{convert_unit}")
